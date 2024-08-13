@@ -2,11 +2,12 @@ import cv2
 import os
 import imutils
 import face_recognition
+import face_recognition_models
 
 personName = 'Nestor'
 BASEDIR = os.path.dirname(os.path.abspath(__file__))
 
-image = cv2.imread(BASEDIR + f'/{personName}/{personName}.png')
+image = cv2.imread(BASEDIR + f'/{personName}/{personName}.jpg')
 face_loc = face_recognition.face_locations(image)[0]
 face_image_encodings = face_recognition.face_encodings(image, known_face_locations=[face_loc])[0]
 
